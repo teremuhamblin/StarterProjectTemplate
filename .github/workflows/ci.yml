@@ -1,30 +1,47 @@
----
-
-## ⚙️ **Workflow GitHub Actions : `.github/workflows/ci.yml`**
-
-```yaml
-name: CI Pipeline
+name: CI - StarterProjectTemplate
 
 on:
   push:
+    branches: [ main ]
   pull_request:
+    branches: [ main ]
 
 jobs:
-  build:
+  build-test:
+    name: Build & Test
     runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: "3.12"
+          node-version: 18
+          cache: npm
 
       - name: Install dependencies
+        run: npm install
+
+      - name: Lint
         run: |
-          pip install pytest
+          echo "Running lint..."
+          npm run lint || { echo '❌ Lint failed'; exit 1; }
 
       - name: Run tests
-        run: pytest -q
+        run: |
+          echo "Running tests..."
+          npm test || { echo '❌ Tests failed'; exit 1; }
+
+      - name: Build project
+        run: |
+          echo "Building project..."
+          npm run build || { echo '❌ Build failed'; exit 1; }
+
+      - name: Upload build artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: spt-build
+          path: dist/
