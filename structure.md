@@ -28,6 +28,7 @@ starter-project-template/
 │   └── test_main.py
 ├── .gitignore
 ├── LICENSE
+├── structure.md 
 └── README.md
 `
 
