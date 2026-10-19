@@ -1,0 +1,27 @@
+# SPT.secure — Politique de sécurité interne
+
+security.level = "high"
+security.audit.enabled = true
+security.audit.frequency = "weekly"
+
+security.policies = [
+  "Ne jamais stocker de secrets dans le code.",
+  "Utiliser des variables d’environnement pour les credentials.",
+  "Activer les workflows CI uniquement sur les branches protégées.",
+  "Signer les releases et vérifier les checksums.",
+  "Limiter les dépendances externes non vérifiées."
+]
+
+security.vulnerabilities.reporting = """
+Toute vulnérabilité doit être signalée via SECURITY.md.
+Réponse garantie sous 48h.
+"""
+
+security.hardening = [
+  "Validation stricte des entrées.",
+  "Logs sécurisés sans données sensibles.",
+  "Isolation des modules critiques.",
+  "Tests de sécurité automatisés."
+]
+
+security.dependencies.scan = "enabled"
