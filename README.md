@@ -21,6 +21,18 @@ Features
 - Ready for cloning and reuse
 ```
 
+### Résumé du projet
+
+StarterProjectTemplate (SPT) fournit une architecture complète incluant
+la configuration, la documentation, les modules, les tests, les workflows GitHub et un
+ensemble de fichiers maîtres (SPT.meta, SPT.secure, SPT.runtime, SPT.bootstrap, SPT.manifest)
+qui définissent l’identité, la sécurité, le comportement et la structure interne du projet.
+
+SPT offre une base solide pour créer des applications modernes, modulaires et évolutives,
+tout en garantissant des bonnes pratiques de développement, de sécurité et d’organisation.
+Il sert de point de départ universel pour tout type de projet : CLI, API, service, outil,
+framework ou application complète.
+
 ### Getting Started
 ```text
 Run the project
