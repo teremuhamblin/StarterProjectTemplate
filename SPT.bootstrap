@@ -1,0 +1,26 @@
+# SPT.bootstrap — Initialisation du projet
+
+bootstrap.sequence = [
+  "check-environment",
+  "load-config",
+  "init-logger",
+  "verify-dependencies",
+  "start-core-modules",
+  "launch-runtime"
+]
+
+bootstrap.checks = {
+  node_version: ">=18",
+  required_folders: ["src", "config", "tests"],
+  required_files: ["SPT.meta", "SPT.runtime"]
+}
+
+bootstrap.autoload = {
+  modules_path: "src/modules",
+  pattern: "*.module.js",
+  enabled: true
+}
+
+bootstrap.on_start = """
+SPT est initialisé. Tous les modules essentiels sont opérationnels.
+"""
