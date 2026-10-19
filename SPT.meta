@@ -1,0 +1,36 @@
+# SPT.meta — Metadata du projet StarterProjectTemplate
+
+project.name = "StarterProjectTemplate"
+project.codename = "SPT"
+project.version = "1.0.0"
+project.author = "Teremu"
+project.license = "MIT"
+
+project.description = """
+StarterProjectTemplate (SPT) est un squelette universel conçu pour initier 
+rapidement un projet propre, structuré, maintenable et extensible.
+"""
+
+project.philosophy = """
+Simplicité, modularité, sécurité, reproductibilité.
+"""
+
+project.keywords = [
+  "starter",
+  "template",
+  "skeleton",
+  "structure",
+  "clean-project",
+  "teremu"
+]
+
+project.modules = [
+  "core",
+  "modules",
+  "cli",
+  "config",
+  "docs",
+  "tests"
+]
+
+project.status = "active"
