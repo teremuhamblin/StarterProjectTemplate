@@ -1,0 +1,40 @@
+# SPT.manifest — Manifest complet du squelette StarterProjectTemplate
+
+manifest.structure = {
+  root: [
+    ".editorconfig",
+    ".gitignore",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "SPT.meta",
+    "SPT.secure",
+    "SPT.runtime",
+    "SPT.bootstrap",
+    "SPT.manifest"
+  ],
+
+  folders: {
+    docs: ["overview.md", "architecture.md", "conventions.md", "roadmap.md"],
+    src: ["index.js", "core/", "modules/", "cli/"],
+    tests: ["example.test.js", "setup.js"],
+    scripts: ["build.sh", "dev.sh", "release.sh"],
+    config: ["default.json", "production.json"],
+    github: [".github/workflows/ci.yml", ".github/workflows/release.yml"]
+  }
+}
+
+manifest.rules.naming = """
+Les fichiers doivent utiliser le kebab-case.
+Les modules doivent utiliser le PascalCase.
+Les services doivent utiliser le camelCase.
+"""
+
+manifest.rules.modules = [
+  "Chaque module doit contenir controller, service, model.",
+  "Les modules doivent être isolés et autonomes.",
+  "Les tests doivent accompagner chaque module."
+]
+
+manifest.versioning = "SemVer"
+manifest.compatibility = "Node >= 18"
