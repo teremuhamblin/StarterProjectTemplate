@@ -1,0 +1,31 @@
+# SPT.runtime — Configuration dynamique du projet
+
+runtime.environments = ["development", "test", "production"]
+
+runtime.dev = {
+  debug: true,
+  logging: "verbose",
+  hot_reload: true,
+  strict_mode: false
+}
+
+runtime.test = {
+  debug: false,
+  logging: "minimal",
+  coverage: "enabled",
+  mocks: "auto"
+}
+
+runtime.production = {
+  debug: false,
+  logging: "standard",
+  optimize: true,
+  strict_mode: true,
+  cache: "enabled"
+}
+
+runtime.features = [
+  "module-autoload",
+  "config-layering",
+  "environment-switching"
+]
